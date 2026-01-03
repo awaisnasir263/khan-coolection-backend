@@ -20,13 +20,7 @@ app.use(cors({
 }));
 
 
-// DATABASE CONNECTION
-// mongoose.connect("mongodb+srv://awaiskhan:awais7800@cluster0.la19pgb.mongodb.net/e-commerce")
-//   .then(() => console.log("MongoDB Connected"))
-//   .catch(err => console.log("Mongo Error:", err));
-// ======================
-// ENV VARIABLES
-// ======================
+
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
 const DB_NAME = process.env.DB_NAME;
