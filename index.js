@@ -21,24 +21,9 @@ app.use(cors({
 
 
 
-const DB_USER = process.env.DB_USER;
-const DB_PASS = process.env.DB_PASS;
-const DB_NAME = process.env.DB_NAME;
-
-// ======================
-// MONGODB CONNECTION
-// ======================
-const MONGODB_URI = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.la19pgb.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
-
-mongoose
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("✅ MongoDB Connected Successfully"))
-  .catch((err) =>
-    console.error("❌ MongoDB Connection Error:", err.message)
-  );
+mongoose.connect("mongodb+srv://awaiskhan:awais7800@cluster0.la19pgb.mongodb.net/e-commerce")
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log("Mongo Error:", err));
 app.get("/", (req, res) => {
   res.send("Express server is running...");
 });
